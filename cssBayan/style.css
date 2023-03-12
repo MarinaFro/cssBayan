@@ -12,7 +12,6 @@ html {
 body {
   font-family: "Lato";
   font-style: normal;
-  font-size: 16px;
   line-height: 1.2;
   font-weight: normal;
   background-color: rgb(251, 242, 242);
@@ -21,12 +20,20 @@ body {
 }
 
 .wrapper {
-  max-width: 1260px;
+  max-width: 78rem;
   margin: 0 auto;
   padding-bottom: 2rem;
   background-color: white;
   color: black;
-  box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+  box-shadow: 0 0.1rem 1.4rem rgba(21, 24, 36, 0.15993);
+}
+
+.wrapper:hover .mem_icon {
+  display: block;
+}
+
+.wrapper:hover .mem_title p {
+  color: rgb(162, 101, 101);
 }
 
 .line {
@@ -50,12 +57,21 @@ body {
   width: 70%;
   margin: 0 auto;
   margin-bottom: 2rem;
-  box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+  box-shadow: 0 0.1rem 1.4rem rgba(21, 24, 36, 0.15993);
   
 }
 
 .mem_item {
+  cursor: pointer;
   /* border: 1px solid red; */
+}
+
+.mem_item:hover .mem_img {
+  width: 70%;
+}
+
+.mem_item:hover .mem_icon {
+  transform: rotate(90deg);
 }
 
 .mem_string {
@@ -65,6 +81,7 @@ body {
 
 .mem_title {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   color: rgb(0, 0, 0);
   font-family:'Climate Crisis', cursive;
@@ -73,25 +90,44 @@ body {
   padding: 1rem;
 }
 
+.mem_title div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mem_title div p {
+  transition: all 0.5s ease;
+}
+
 .mem_icon {
+  display: none;
   width: 1.5rem;
   height: 1.5rem; 
+  transition: all 0.5s ease;
 }
 
 .mem_input {
   appearance: none;
 }
 
-.mem_input:checked + .mem_img {
-  display: block;
+.mem_input:checked~.mem_title .mem_img {
+  width: 70%;
 }
 
+.mem_input:checked + .mem_title .mem_icon {
+  transform: rotate(90deg);
+}
+
+.mem_input:checked~.mem_title div p {
+  color: rgb(162, 101, 101);
+}
 
 .mem_img {
-  display: none;
-  width: 70%;
+  display: block;
+  width: 0%;
   padding: 1rem;
   margin: 0 auto;
+  transition: all 1s ease;
 }
 
   /*Mem end */
