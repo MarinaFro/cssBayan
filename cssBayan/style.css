@@ -53,12 +53,23 @@ body {
   border: 1px solid red;
 }
 
+.mem_string {
+  display: flex;
+  justify-content: space-between;
+}
+
 .mem_title {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   color: rgb(0, 0, 0);
   font-size: 2rem;
   cursor: pointer;
   padding: 1rem;
+}
+
+.mem_icon {
+  width: 1.5rem;
+  height: 1.5rem; 
 }
 
 .mem_input {
@@ -72,7 +83,9 @@ body {
 
 .mem_img {
   display: none;
+  width: 70%;
   padding: 1rem;
+  margin: 0 auto;
 }
 
   /*Mem end */
